@@ -3,3 +3,5 @@
 {"artifact_id":"art_bd30e15a571ac04f665db1b8a57e5f43","byte_size":4633,"content_hash":{"algorithm":"sha256","digest":"bd30e15a571ac04f665db1b8a57e5f43c0b505fd2e17a072c810ad30516c7f6a"},"media_type":"text/markdown"}
 {"artifact_id":"art_dee91189c7b320acffe3db41bad37fdd","byte_size":5233,"content_hash":{"algorithm":"sha256","digest":"dee91189c7b320acffe3db41bad37fdd51864304875197daa233d36dfb05bf59"},"media_type":"text/markdown"}
 {"artifact_id":"art_b030642ff65f883ff467529c73cbb6e5","byte_size":17269,"content_hash":{"algorithm":"sha256","digest":"b030642ff65f883ff467529c73cbb6e502deca28f4c3dece0c2879bf690d3b15"},"media_type":"text/markdown"}
+{"artifact_id":"art_86d1b22d498ecb4b68052930d31ef843","byte_size":4826122,"content_hash":{"algorithm":"sha256","digest":"86d1b22d498ecb4b68052930d31ef843dd535b43fef42ebf45f981708d637563"},"media_type":"application/json"}
+{"artifact_id":"art_2cfbffd5e2472add28b7825271a76e51","byte_size":855976,"content_hash":{"algorithm":"sha256","digest":"2cfbffd5e2472add28b7825271a76e516a49c0a002c8466bf531017ead1e7422"},"media_type":"application/json"}
