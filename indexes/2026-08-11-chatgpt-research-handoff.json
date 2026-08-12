@@ -60,6 +60,16 @@
   ],
   "limitations": [
     "The public shared page exposed a complete serialized conversation mapping, but no separate ChatGPT export or authenticated internal metadata.",
-    "The decoded JSON representation is preserved as the source artifact; it is not cleaned prose."
-  ]
+    "The decoded JSON representation is preserved as the source artifact; it is not cleaned prose.",
+    "The ingestion validation report records portable structural checks, but no Fossil-native validator/replay run was available.",
+    "Three derived records (human-study-os, ownership-planes, granularity) have no transcript node span mapping and remain incomplete for exact reconstruction."
+  ],
+  "ingestion_validation": {
+    "report_id": "val_86d1b22d498ecb4b68052930",
+    "artifact_id": "art_8295b16dddbce34c4ff1662e6e5f96e5",
+    "sha256": "8295b16dddbce34c4ff1662e6e5f96e57f326021e32f81b94bcc05af8ec6272d",
+    "overall_status": "PARTIAL_VALIDATION",
+    "native_fossil_validator": "NOT_RUN",
+    "transcript_span_completeness": "PARTIAL: 9 of 12 derived records have transcript node references; 3 retain explicit gaps."
+  }
 }
