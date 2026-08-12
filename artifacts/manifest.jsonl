@@ -6,3 +6,4 @@
 {"artifact_id":"art_86d1b22d498ecb4b68052930d31ef843","byte_size":4826122,"content_hash":{"algorithm":"sha256","digest":"86d1b22d498ecb4b68052930d31ef843dd535b43fef42ebf45f981708d637563"},"media_type":"application/json"}
 {"artifact_id":"art_2cfbffd5e2472add28b7825271a76e51","byte_size":855976,"content_hash":{"algorithm":"sha256","digest":"2cfbffd5e2472add28b7825271a76e516a49c0a002c8466bf531017ead1e7422"},"media_type":"application/json"}
 {"artifact_id":"art_8295b16dddbce34c4ff1662e6e5f96e5","byte_size":4429,"content_hash":{"algorithm":"sha256","digest":"8295b16dddbce34c4ff1662e6e5f96e57f326021e32f81b94bcc05af8ec6272d"},"media_type":"application/json"}
+{"artifact_id":"art_aaafafdb24d2d7270924dd00f24156f3","byte_size":2779,"content_hash":{"algorithm":"sha256","digest":"aaafafdb24d2d7270924dd00f24156f3219fdfbaa6cc86d62a2e75fb833f80d0"},"media_type":"application/json"}

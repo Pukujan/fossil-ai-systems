@@ -6,7 +6,7 @@
   "source": {
     "url": "https://chatgpt.com/share/6a7b8407-9c28-83ea-b6f4-4a08eb5c6001?ogimg=plain",
     "artifact_id": "art_86d1b22d498ecb4b68052930d31ef843",
-    "snapshot_id": "snap_86d1b22d498ecb4b68052930",
+    "snapshot_id": "snap_c1944c2e93be3cb1786854ba",
     "sha256": "86d1b22d498ecb4b68052930d31ef843dd535b43fef42ebf45f981708d637563",
     "representation": "complete decoded shared-page serverResponse.data mapping; 1,164 mapping nodes, including user/assistant/tool/system content and parent/child lineage"
   },
@@ -48,9 +48,9 @@
     ]
   },
   "lineage": [
-    "Pukujan/fossil-core#84 — engineering-preflight experiment",
-    "Pukujan/fossil-core#85 — broader human + agent engineering operating-model research",
-    "Pukujan/fossil-core PR #80 / issue #79 — control-plane and live-service context",
+    "Pukujan/fossil-core#84 \u2014 engineering-preflight experiment",
+    "Pukujan/fossil-core#85 \u2014 broader human + agent engineering operating-model research",
+    "Pukujan/fossil-core PR #80 / issue #79 \u2014 control-plane and live-service context",
     "Existing fossil-ai-systems Gate 2 history artifacts remain prior evidence; this transcript is higher-fidelity source evidence for the 2026-08-11 research."
   ],
   "supersession_rules": [
@@ -61,15 +61,25 @@
   "limitations": [
     "The public shared page exposed a complete serialized conversation mapping, but no separate ChatGPT export or authenticated internal metadata.",
     "The decoded JSON representation is preserved as the source artifact; it is not cleaned prose.",
-    "The ingestion validation report records portable structural checks, but no Fossil-native validator/replay run was available.",
-    "Three derived records (human-study-os, ownership-planes, granularity) have no transcript node span mapping and remain incomplete for exact reconstruction."
+    "Three derived records (human-study-os, ownership-planes, granularity) have no transcript node span mapping and remain incomplete for exact reconstruction.",
+    "Fossil-native portable pack validation now passes; the full upstream fossil-core suite still has four pre-existing retrieval-bakeoff failures unrelated to this corpus repair."
   ],
   "ingestion_validation": {
-    "report_id": "val_86d1b22d498ecb4b68052930",
-    "artifact_id": "art_8295b16dddbce34c4ff1662e6e5f96e5",
-    "sha256": "8295b16dddbce34c4ff1662e6e5f96e57f326021e32f81b94bcc05af8ec6272d",
-    "overall_status": "PARTIAL_VALIDATION",
-    "native_fossil_validator": "NOT_RUN",
+    "report_id": "val_c1944c2e93be3cb1786854ba",
+    "artifact_id": "art_aaafafdb24d2d7270924dd00f24156f3",
+    "sha256": "aaafafdb24d2d7270924dd00f24156f3219fdfbaa6cc86d62a2e75fb833f80d0",
+    "overall_status": "PASS_WITH_EXPLICIT_LIMITS",
+    "native_fossil_validator": "PASS: validate_pack_fixtures across fossil-common and fossil-ai-systems",
+    "native_audit_counts": {
+      "artifacts": 9,
+      "snapshots": 7,
+      "events": 51,
+      "citations": 47,
+      "claims": 23,
+      "relations": 4
+    },
+    "focused_contract_tests": "PASS: 28 tests",
+    "full_upstream_suite": "BASELINE_FAILURES: 108 passed, 4 existing retrieval-bakeoff failures",
     "transcript_span_completeness": "PARTIAL: 9 of 12 derived records have transcript node references; 3 retain explicit gaps."
   }
 }

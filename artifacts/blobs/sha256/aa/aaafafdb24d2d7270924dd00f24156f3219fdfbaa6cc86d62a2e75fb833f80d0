@@ -1,0 +1,53 @@
+{
+  "schema_version": "fossil.validation-report.v1",
+  "report_id": "val_c1944c2e93be3cb1786854ba",
+  "pack_id": "pack_f024177f89a5442db84171c3dd7f58e5",
+  "generated_at": "2026-08-12T03:18:16Z",
+  "source_snapshot_id": "snap_c1944c2e93be3cb1786854ba",
+  "source_artifact_id": "art_86d1b22d498ecb4b68052930d31ef843",
+  "native_pack_audit": {
+    "status": "PASS",
+    "command": "PYTHONPATH=src .venv/bin/python -c 'from dkg.pack_fixture import validate_pack_fixtures; validate_pack_fixtures([fossil-common,fossil-ai-systems], schemas_root=schemas)'",
+    "pack_ids": [
+      "pack_269099f7b2ba43b7a99b9427d64092de",
+      "pack_f024177f89a5442db84171c3dd7f58e5"
+    ],
+    "artifacts": 9,
+    "snapshots": 7,
+    "events": 51,
+    "citations": 47,
+    "claims": 23,
+    "relations": 4
+  },
+  "focused_contract_tests": {
+    "status": "PASS",
+    "command": "pytest tests/test_pack_fixture.py tests/test_source_provenance.py tests/test_event_store.py tests/test_lifecycle.py tests/test_pack_corpus.py tests/test_pack.py",
+    "passed": 28
+  },
+  "full_upstream_suite": {
+    "status": "BASELINE_FAILURES",
+    "passed": 108,
+    "failed": 4,
+    "failures": [
+      "tests/test_retrieval_bakeoff.py::test_route_eligibility_keeps_candidate_failures_as_disqualification_evidence",
+      "tests/test_retrieval_bakeoff.py::test_route_eligibility_records_retrieval_leakage_without_hiding_end_to_end_safety",
+      "tests/test_retrieval_bakeoff.py::test_route_eligibility_requires_pack_isolation_for_end_to_end_guardrails",
+      "tests/test_retrieval_bakeoff.py::test_route_eligibility_accepts_only_fully_clean_candidate"
+    ],
+    "note": "Existing fossil-core retrieval-bakeoff helper lacks _route_eligibility; no fossil-core source was changed by this ingestion repair."
+  },
+  "repair_findings": [
+    "Added immutable artifact manifests for the transcript, derived trace, and validation report.",
+    "Aligned source snapshot metadata with the source-snapshot schema and Fossil stable locator identity.",
+    "Re-keyed transcript event IDs using Fossil deterministic_event_id(pack_id, idempotency_key).",
+    "Recomputed citation IDs after the source snapshot identity repair.",
+    "Preserved retrieval method and limitations in schema-supported source quality notes."
+  ],
+  "remaining_limits": [
+    "External URLs are indexed and referenced but were not independently retrieved into source snapshots.",
+    "Three derived research records retain explicit transcript-span gaps.",
+    "The transcript remains primary source evidence; derived research is not accepted architecture."
+  ],
+  "authority_boundary": "This report records Fossil-native portable pack validation and focused contract tests. It does not promote transcript claims or resolve undecided architecture."
+}
+
