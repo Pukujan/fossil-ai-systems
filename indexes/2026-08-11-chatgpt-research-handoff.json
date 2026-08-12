@@ -1,0 +1,75 @@
+{
+  "schema_version": "fossil.research-handoff.v1",
+  "handoff_id": "handoff_86d1b22d498ecb4b68052930",
+  "title": "Reconstruct the 2026-08-11 engineering-methodology research",
+  "retrieval_prompt": "Reconstruct the August 11, 2026 engineering-methodology research: show the immutable shared-transcript provenance, current status-separated conclusions, unresolved V4/executor questions, experiments, external sources, and decision lineage.",
+  "source": {
+    "url": "https://chatgpt.com/share/6a7b8407-9c28-83ea-b6f4-4a08eb5c6001?ogimg=plain",
+    "artifact_id": "art_86d1b22d498ecb4b68052930d31ef843",
+    "snapshot_id": "snap_86d1b22d498ecb4b68052930",
+    "sha256": "86d1b22d498ecb4b68052930d31ef843dd535b43fef42ebf45f981708d637563",
+    "representation": "complete decoded shared-page serverResponse.data mapping; 1,164 mapping nodes, including user/assistant/tool/system content and parent/child lineage"
+  },
+  "derived_trace": {
+    "artifact_id": "art_2cfbffd5e2472add28b7825271a76e51",
+    "sha256": "2cfbffd5e2472add28b7825271a76e516a49c0a002c8466bf531017ead1e7422",
+    "status": "OPEN_RESEARCH",
+    "external_source_index_count": 1226
+  },
+  "current_status": {
+    "accepted_current": [
+      "The current V4 executor decision state is undecided; this is a status conclusion, not a new architecture promotion.",
+      "The tested OpenCode path failed; that does not establish that OpenCode itself is unsuitable.",
+      "Fossil research evidence, derived research, and accepted architecture must remain separate authority planes."
+    ],
+    "research": [
+      "Human Study OS: task-first bite-size engineering lessons, visual mental models, retrieval practice, pre-build questions, and debugging checklists.",
+      "Agent methodology: universal kernel, risk-triggered checks, mechanical validation, bounded critique/adjudication, scope gate, and closeout receipts.",
+      "False-success firewall, fault isolation, ownership boundaries, observability/correlation spine, and GitHub project-vs-runtime separation."
+    ],
+    "proposed": [
+      "V4 as a dynamic control-policy/controller with an ExecutorPort is a leading hypothesis only."
+    ],
+    "experimental": [
+      "OpenCode through the LiteLLM generic Chat path returned 200 with an empty body, unknown completion, zero tokens, and no mutation.",
+      "A matched OpenCode/Aider/direct-control bakeoff, including monolithic-vs-granular tasks, is proposed and not yet run."
+    ],
+    "undecided": [
+      "OpenCode vs Aider vs direct/other executor.",
+      "Final V4 boundary and depth of Spec Kit integration.",
+      "Task granularity.",
+      "Study OS product implementation."
+    ],
+    "historical": [
+      "Earlier synthesis was stored in fossil-core Git/PR workflow before this durable corpus ingestion."
+    ],
+    "unverified": [
+      "External source claims are indexed and provenance-linked, but the original external sources have not all been independently captured as Fossil snapshots."
+    ]
+  },
+  "lineage": [
+    "Pukujan/fossil-core#84 — engineering-preflight experiment",
+    "Pukujan/fossil-core#85 — broader human + agent engineering operating-model research",
+    "Pukujan/fossil-core PR #80 / issue #79 — control-plane and live-service context",
+    "Existing fossil-ai-systems Gate 2 history artifacts remain prior evidence; this transcript is higher-fidelity source evidence for the 2026-08-11 research."
+  ],
+  "supersession_rules": [
+    "Do not treat the full transcript or any assistant response as architecture authority.",
+    "Use the derived trace status and source_node_refs, then consult canonical architecture/decision records for accepted contracts.",
+    "The previous repository-only synthesis is historical; this immutable transcript artifact is the source-of-record for reconstructing the conversation."
+  ],
+  "limitations": [
+    "The public shared page exposed a complete serialized conversation mapping, but no separate ChatGPT export or authenticated internal metadata.",
+    "The decoded JSON representation is preserved as the source artifact; it is not cleaned prose.",
+    "The ingestion validation report records portable structural checks, but no Fossil-native validator/replay run was available.",
+    "Three derived records (human-study-os, ownership-planes, granularity) have no transcript node span mapping and remain incomplete for exact reconstruction."
+  ],
+  "ingestion_validation": {
+    "report_id": "val_86d1b22d498ecb4b68052930",
+    "artifact_id": "art_8295b16dddbce34c4ff1662e6e5f96e5",
+    "sha256": "8295b16dddbce34c4ff1662e6e5f96e57f326021e32f81b94bcc05af8ec6272d",
+    "overall_status": "PARTIAL_VALIDATION",
+    "native_fossil_validator": "NOT_RUN",
+    "transcript_span_completeness": "PARTIAL: 9 of 12 derived records have transcript node references; 3 retain explicit gaps."
+  }
+}
