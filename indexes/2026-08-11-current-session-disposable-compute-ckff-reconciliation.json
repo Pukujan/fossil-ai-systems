@@ -1,0 +1,41 @@
+{
+  "current_tracker": "https://github.com/Pukujan/fossil-core/issues/86",
+  "derived_synthesis": {
+    "artifact_id": "art_b5d4e04f0a97996f7d1ddeb9b26b9f40",
+    "sha256": "b5d4e04f0a97996f7d1ddeb9b26b9f40d9be7ff11e1c70c32b43ff8cd08d4a4b",
+    "snapshot_id": "snap_fb26865079c7c7ee5f9adb57",
+    "status": "OPEN_RESEARCH_WITH_CURRENT_TRACKER_STATE"
+  },
+  "events": [
+    "evt_76efe8983737ffe36079fbb8ebdad69e",
+    "evt_0e45301448c036fcda701d6e2d2ab6c1"
+  ],
+  "focused_work": [
+    "https://github.com/Pukujan/litellm-ckff-ops/issues/9",
+    "https://github.com/Pukujan/litellm-ckff-ops/issues/10",
+    "https://github.com/Pukujan/litellm-ckff-ops/issues/11"
+  ],
+  "handoff_id": "handoff_d59b94a3e46cf91b7b316018",
+  "limitations": [
+    "No exact export/share object was available for this continuation.",
+    "Earlier assistant messages are reconstructed from retained context where verbatim rendered text was unavailable.",
+    "The fossil-ai-systems repository is public; no secret token value is included.",
+    "GitHub Projects board fields were not accessible to the connected tool and were not reconciled."
+  ],
+  "retrieval_prompt": "Reconstruct the continuation session that moved current project sequencing to disposable compute + durable truth, automated CKFF/LiteLLM factual and account telemetry lanes, and reconciled stale Fossil/Cortex trackers.",
+  "schema_version": "fossil.research-handoff.v1",
+  "source": {
+    "artifact_id": "art_d59b94a3e46cf91b7b3160183e0bf307",
+    "prior_transcript_snapshot_id": "snap_c1944c2e93be3cb1786854ba",
+    "representation": "RECONSTRUCTED_VISIBLE_SESSION_RECORD; not a byte-for-byte ChatGPT export",
+    "sha256": "d59b94a3e46cf91b7b3160183e0bf30739fa79c9cd336aaa515dba2e614fd0d3",
+    "snapshot_id": "snap_82d730b422aa3103f11b4bc6"
+  },
+  "supersession_rules": [
+    "Do not duplicate or replace the earlier shared-transcript artifact/snapshot.",
+    "Do not treat this reconstructed session record as verbatim platform evidence.",
+    "Do not treat assistant synthesis as architecture authority; consult current GitHub contracts/issues/decisions.",
+    "Persistent infrastructure remains candidate/deferred unless #86 or later evidence re-promotes it."
+  ],
+  "title": "Reconstruct the 2026-08-11 continuation that produced disposable-compute tracker #86"
+}

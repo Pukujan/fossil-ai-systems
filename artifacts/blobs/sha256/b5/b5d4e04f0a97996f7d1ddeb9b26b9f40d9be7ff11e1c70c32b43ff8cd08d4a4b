@@ -1,0 +1,74 @@
+{
+  "candidate": [
+    "Use GitHub-hosted Actions as the default bounded engineering compute layer, with durable state in managed systems.",
+    "Use litellm-ckff-ops as the normalized factual boundary for CKFF models/routes/capabilities/timeouts/observed health and read-only account telemetry.",
+    "Keep V4 focused on dynamic execution policy rather than provider factual collection or generic Spec-to-Plan-to-Tasks methodology.",
+    "Evaluate Spec Kit for generic specification/planning/task/workflow mechanics.",
+    "Use S3/R2-compatible object storage for canonical Fossil artifacts/events with replaceable projections.",
+    "Pin embedding-model identity to each Fossil vector projection/index version; changing embedder triggers rebuild.",
+    "Retain a small managed LiteLLM Railway gateway if its stable shared boundary justifies the recurring service."
+  ],
+  "current_project_state": {
+    "focused_litellm_issues": [
+      "https://github.com/Pukujan/litellm-ckff-ops/issues/9",
+      "https://github.com/Pukujan/litellm-ckff-ops/issues/10",
+      "https://github.com/Pukujan/litellm-ckff-ops/issues/11"
+    ],
+    "master_tracker": "https://github.com/Pukujan/fossil-core/issues/86",
+    "note": "GitHub issue/backlog reconciliation was executed in-session. GitHub Projects board fields were unavailable through the connected API surface."
+  },
+  "known": [
+    "Actions/runner compute must be treated as disposable rather than canonical Fossil truth.",
+    "Fossil canonical meaning remains immutable evidence/events, stable identity, provenance, lifecycle, contracts, proposal-before-commit and rebuild semantics.",
+    "The tested LiteLLM/OpenCode staging failure is a semantic false-success class: HTTP 200 with empty body must not be accepted as successful execution.",
+    "The earlier shared ChatGPT transcript is already separately ingested and must not be duplicated by this continuation."
+  ],
+  "limitations": [
+    "This continuation source is reconstructed from retained visible-session context because no exact platform export/share object was available.",
+    "Earlier assistant responses are detailed reconstructions rather than guaranteed byte-for-byte copies.",
+    "System/developer/private reasoning and raw tool payloads are intentionally excluded.",
+    "The public fossil-ai-systems pack contains this technical conversation provenance; no CKFF account token value is present."
+  ],
+  "lineage": [
+    "Pukujan/fossil-core#86 current architecture reconciliation tracker",
+    "Pukujan/litellm-ckff-ops#9 factual catalog/config",
+    "Pukujan/litellm-ckff-ops#10 account telemetry/reconciliation",
+    "Pukujan/litellm-ckff-ops#11 gateway semantic acceptance",
+    "Pukujan/fossil-core#84 engineering preflight",
+    "Pukujan/fossil-core#81 durable object store/rebuildability",
+    "Pukujan/fossil-core#47/#48 retrieval/RAG evidence lanes",
+    "Pukujan/cortex-v4#1/#2/#3/#5/#8/#9 reconciled execution/control lanes"
+  ],
+  "schema_version": "fossil.research-session-synthesis.v1",
+  "security_and_cost": [
+    "CKFF_ACCOUNT_TOKEN is secret material and must not be stored in Git contents or exposed to V4/Fossil/clients.",
+    "Provider/account telemetry and gateway-attributed telemetry are separate truth planes and should be reconcilable.",
+    "Learning infrastructure target discussed in-session was very low recurring non-inference cost, preferring free/local/serverless/disposable options."
+  ],
+  "source": {
+    "artifact_id": "art_d59b94a3e46cf91b7b3160183e0bf307",
+    "prior_transcript_artifact_id": "art_86d1b22d498ecb4b68052930d31ef843",
+    "prior_transcript_snapshot_id": "snap_c1944c2e93be3cb1786854ba",
+    "representation": "reconstructed visible-session record, not a platform export",
+    "snapshot_id": "snap_82d730b422aa3103f11b4bc6"
+  },
+  "status": "OPEN_RESEARCH_WITH_CURRENT_TRACKER_STATE",
+  "superseded_assumptions": [
+    "Gravebuster/local PC is a prerequisite for ordinary AI/software-engineering work.",
+    "A permanent self-hosted GitHub runner is required.",
+    "Tailscale must be completed before managed/disposable paths can proceed.",
+    "OpenCode requires a permanent server/session host.",
+    "Control Room/Supabase must precede execution reliability work.",
+    "V4 independently crawls and normalizes CKFF provider facts."
+  ],
+  "title": "2026-08-11 continuation: disposable compute, CKFF/LiteLLM factual plane, and tracker reconciliation",
+  "undecided": [
+    "OpenCode vs Aider vs direct/simple executor.",
+    "Monolithic vs checkpointed task granularity.",
+    "R2 vs S3.",
+    "Central LiteLLM Proxy vs embedded LiteLLM for some consumers.",
+    "Whether Fossil requires an always-on managed projection/query API.",
+    "Whether Gravebuster/Tailscale survive for any residual private/local requirement.",
+    "Final V4/Spec Kit division after experiments."
+  ]
+}
