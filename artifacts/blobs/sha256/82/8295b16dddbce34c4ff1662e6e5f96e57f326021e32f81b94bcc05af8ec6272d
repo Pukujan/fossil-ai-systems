@@ -1,0 +1,89 @@
+{
+  "schema_version": "fossil.validation-report.v1",
+  "report_id": "val_86d1b22d498ecb4b68052930",
+  "pack_id": "pack_f024177f89a5442db84171c3dd7f58e5",
+  "correlation_id": "chatgpt-share-6a7b8407-research-20260811",
+  "generated_at": "2026-08-12T02:57:38.453Z",
+  "scope": {
+    "source_url": "https://chatgpt.com/share/6a7b8407-9c28-83ea-b6f4-4a08eb5c6001?ogimg=plain",
+    "source_artifact_id": "art_86d1b22d498ecb4b68052930d31ef843",
+    "source_snapshot_id": "snap_86d1b22d498ecb4b68052930",
+    "source_sha256": "86d1b22d498ecb4b68052930d31ef843dd535b43fef42ebf45f981708d637563",
+    "source_bytes": 4826122,
+    "derived_trace_id": "trace_86d1b22d498ecb4b68052930",
+    "derived_trace_artifact_id": "art_2cfbffd5e2472add28b7825271a76e51",
+    "derived_trace_sha256": "2cfbffd5e2472add28b7825271a76e516a49c0a002c8466bf531017ead1e7422",
+    "event_count": 17,
+    "trace_record_count": 12
+  },
+  "checks": [
+    {
+      "id": "source-json-parse",
+      "status": "PASS",
+      "evidence": "The captured shared-page serverResponse.data representation parsed as JSON before publication."
+    },
+    {
+      "id": "source-digest",
+      "status": "PASS",
+      "evidence": "The published artifact path and source snapshot carry the pre-publication SHA-256 digest and byte count."
+    },
+    {
+      "id": "source-snapshot-contract",
+      "status": "PASS",
+      "evidence": "Snapshot contains source URL, retrieval timestamp, media/provenance description, digest, stable artifact ID, and limitation metadata."
+    },
+    {
+      "id": "derived-trace-json-parse",
+      "status": "PASS",
+      "evidence": "Derived trace parsed as JSON; 12 records, six observed lifecycle statuses, five relationships, and 1,226 raw URL references are present."
+    },
+    {
+      "id": "event-schema-shape",
+      "status": "PASS",
+      "evidence": "17 event files use dkg.event.v1; all reference the shared source snapshot and source artifact evidence."
+    },
+    {
+      "id": "stable-id-uniqueness",
+      "status": "PASS",
+      "evidence": "17 event IDs were unique; claim/citation/relation IDs were generated deterministically from the source digest and record index."
+    },
+    {
+      "id": "manifest-registration",
+      "status": "PASS",
+      "evidence": "Source and derived trace artifacts are registered in artifacts/manifest.jsonl."
+    },
+    {
+      "id": "remote-tree-presence",
+      "status": "PASS",
+      "evidence": "Expected artifact, snapshot, trace, event, and handoff paths are present on research/chatgpt-transcript-20260811."
+    },
+    {
+      "id": "transcript-span-completeness",
+      "status": "PARTIAL",
+      "evidence": "9 of 12 derived records have transcript node references. human-study-os, ownership-planes, and granularity retain empty node-reference arrays and must not be treated as span-complete."
+    },
+    {
+      "id": "external-source-snapshots",
+      "status": "NOT_RUN",
+      "evidence": "The trace preserves a raw URL index and claim-level URL references, but external pages were not independently retrieved into Fossil source snapshots in this pass."
+    },
+    {
+      "id": "native-fossil-validator",
+      "status": "NOT_RUN",
+      "evidence": "No Fossil validator implementation or runnable validator workflow was available through this workspace; the pack README points contract implementation to fossil-core, and the GitHub connector reported no Actions runs for the PR head."
+    },
+    {
+      "id": "projection-replay",
+      "status": "NOT_RUN",
+      "evidence": "No Fossil projection/replay environment was available; this PR carries portable corpus records only."
+    }
+  ],
+  "overall_status": "PARTIAL_VALIDATION",
+  "authority_boundary": "This report validates the ingestion records and their portable structure. It does not promote transcript content to accepted architecture and is not a substitute for Fossil-native validator/replay execution.",
+  "limitations": [
+    "The source artifact is the complete decoded serialized shared-page mapping exposed by the public URL, not an independent authenticated ChatGPT export.",
+    "The external URL index intentionally retains noisy or tool-generated URL-like references; all external claims remain UNVERIFIED until separately captured and checked.",
+    "Three trace records have no transcript node span mapping and remain incomplete for exact reconstruction.",
+    "The PR is a draft and has not been merged."
+  ]
+}
