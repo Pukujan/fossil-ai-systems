@@ -16,6 +16,20 @@
     "https://github.com/Pukujan/litellm-ckff-ops/issues/11"
   ],
   "handoff_id": "handoff_d59b94a3e46cf91b7b316018",
+  "ingestion_validation": {
+    "checks": [
+      "transcript SHA-256 and artifact ID recomputed",
+      "derived synthesis SHA-256 and artifact ID recomputed",
+      "source locator/source ID and transcript snapshot ID recomputed",
+      "derived snapshot parent lineage points to reconstructed transcript snapshot",
+      "both durable event IDs recomputed from pack ID + idempotency key",
+      "derived synthesis event is caused by session-ingested event",
+      "no CKFF account-token value or Bearer credential is present in reconstructed text"
+    ],
+    "native_fossil_pack_validator": "NOT_RUN",
+    "reason": "fossil-ai-systems has no pack-validation workflow; do not claim native validator PASS until run against fossil-core.",
+    "structural_algorithm_checks": "PASS"
+  },
   "limitations": [
     "No exact export/share object was available for this continuation.",
     "Earlier assistant messages are reconstructed from retained context where verbatim rendered text was unavailable.",
