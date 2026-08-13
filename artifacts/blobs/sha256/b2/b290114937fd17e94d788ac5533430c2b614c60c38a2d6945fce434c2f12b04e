@@ -1,0 +1,119 @@
+# FOSSIL architecture validation — five-pass criticism and sourced refinement
+
+**Captured:** 2026-08-13
+**Status:** PROPOSED_RESEARCH — refinement of the earlier adversarial review, not an accepted architecture decision.
+**Relationship:** Refines the 2026-08-13 FOSSIL adversarial architecture review already preserved in this pack. It does not supersede that artifact; it narrows and validates parts of it.
+**Method:** Re-checked current FOSSIL architecture/contracts and challenged the storage/API proposal across five independent failure modes. External facts were checked against primary documentation on 2026-08-13. External pages were not archived byte-for-byte in this pass, so this memo preserves the reviewed synthesis and exact source URLs, not immutable copies of those websites.
+
+## Corrected architecture position
+
+The durable invariant is stronger than any provider choice:
+
+- FOSSIL owns stable knowledge identity, evidence/event semantics, provenance, lifecycle, pack boundaries, validation, and reconstruction.
+- Git is appropriate for source code, schemas, ontology, decisions, small fixtures, manifests, and reproducibility metadata; it should not be the only or normal growing store for private/redactable corpus payloads.
+- Canonical evidence/events should live behind replaceable durable storage ports.
+- Local mirrors and graph/vector/lexical state are rebuildable read/query infrastructure, not semantic authority.
+- `CorpusService` remains the protocol-independent agent/application boundary; MCP/HTTP/in-process access are transports/adapters.
+- Cloudflare R2 is a strong first S3-compatible candidate, but is not promoted here to permanent or exclusive storage architecture.
+- A managed/self-hosted/local deployment contract must bind authenticated identity to server-owned workspace/tenant, exact packset, read/write scope, and capability grants. Remote callers must not self-assert authority.
+
+## Five criticism passes
+
+### 1. Durable commit / concurrency
+
+Primary-source validation:
+- Cloudflare R2 documents strong read-after-write, deletion, and listing consistency.
+- R2 documents that when two clients write/delete the same key, the last writer to complete wins.
+- R2 durability documentation says successful writes are acknowledged only after data has been persisted.
+Sources:
+- https://developers.cloudflare.com/r2/reference/consistency/
+- https://developers.cloudflare.com/r2/reference/durability/
+
+Interpretation for FOSSIL:
+R2 is credible for immutable canonical objects under the current one-logical-writer/idempotent-write model, but object storage is not by itself a multi-object transactional knowledge database. FOSSIL must preserve stable unique identities, idempotent retry, loud conflict on different bytes for the same identity, and fail-closed durable acknowledgement. If future multi-writer or atomic-batch requirements appear, benchmark a transactional/event substrate behind the same port instead of weakening semantics.
+
+### 2. Redaction / privacy
+
+Primary-source validation:
+- GitHub documents that sensitive data can remain reachable in clones, forks, cached SHA views, and pull requests after history rewriting, and that other users' clones cannot be remotely cleaned by GitHub.
+- Cloudflare R2 bucket locks prevent deletion/overwrite for their retention period.
+Sources:
+- https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+- https://developers.cloudflare.com/r2/buckets/bucket-locks/
+
+Interpretation for FOSSIL:
+Private/customer/confidential/redactable payloads should not normally enter Git. Redaction needs an object-class-aware retention policy: redactable canonical payloads must remain actually deletable by a narrowly authorized path; non-sensitive tombstones/audit records may use stronger retention. Redaction must also remove or suppress data from mirrors, projections, exports, and caches.
+
+### 3. Recovery / dependency
+
+Primary-source validation:
+- R2 documents eleven-nines annual durability, but separately notes that durability is not availability and does not protect against intentional/accidental deletion.
+Source:
+- https://developers.cloudflare.com/r2/reference/durability/
+
+Interpretation for FOSSIL:
+A verified local mirror is useful for low-latency operation and resilience, but must remain disposable. The proof gate is empty-machine recovery from canonical objects followed by hash verification and semantic/projection reconstruction. R2 alone is not a complete backup policy; add an independent backup only after the primary restore contract is proven.
+
+### 4. Managed-service / hostile-harness security
+
+Primary-source validation:
+- The MCP authorization specification defines authorization for HTTP transports; stdio should obtain credentials from the environment instead.
+Source:
+- https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization
+
+Current FOSSIL validation:
+- The existing `CorpusService` is deliberately protocol-independent and pack/Skill gated.
+- The current `ThinMCPAdapter` exposes a small FOSSIL capability surface rather than arbitrary graph mutation.
+
+Interpretation for FOSSIL:
+The domain boundary is correct, but a managed remote service needs a distinct authenticated trust boundary. The server must resolve the caller's workspace/tenant, exact packset, read/write targets, and capability grants. Client-supplied actor/model/Skill provenance remains evidence/provenance and must not be treated as authorization authority.
+
+### 5. Scale / query architecture
+
+Current FOSSIL validation:
+- The durable architecture already treats graphs/vector indexes as replaceable projections.
+- Current simple event scanning is acceptable as a reference implementation but cannot be the production query path for a materially larger corpus.
+
+Interpretation for FOSSIL:
+Canonical object storage and query infrastructure should scale independently. Normal search should use authorized local/hosted projections; it should not enumerate the remote object corpus. Rebuild manifests/checkpoints may accelerate recovery while remaining discardable.
+
+## Validation gates before operational promotion
+
+G1 — durable-object correctness:
+- identical retry is idempotent;
+- same stable identity with different bytes fails loudly;
+- durable outage cannot return committed success;
+- required evidence must exist before dependent accepted event commit.
+
+G2 — redaction:
+- canonical payload removed/suppressed from durable store, mirror, projection, cache/export;
+- minimal tombstone remains;
+- redacted identity cannot silently reappear.
+
+G3 — empty-machine recovery:
+- delete local event/artifact/projection state;
+- restore canonical objects only;
+- verify hashes and identities;
+- rebuild projections;
+- semantic reconstruction invariants match.
+
+G4 — hostile caller isolation:
+- forged actor, pack, Skill/capability, workspace, or cross-tenant IDs cannot expand authority;
+- direct graph/database mutation remains unavailable through the normal harness surface.
+
+G5 — longitudinal scale:
+- historical belief, supersession, contradiction, stale dependency, ontology evolution, and projection rebuild remain correct at materially larger corpus sizes;
+- query latency is measured independently of remote canonical object enumeration.
+
+## Backlog reconciliation
+
+- `fossil-core#81` already owns the architecture invariant: GitHub is control/source, durable storage is ported, and local projections are replaceable.
+- `fossil-core#87` already owns the S3-compatible/R2 durability and zero-local-state rebuild proof.
+- `fossil-core#111` already owns semantic commit hardening, exact packsets/promotion, and longitudinal epistemic scale testing.
+- `fossil-core#48` already owns permission/redaction readiness before multi-user/cloud use.
+
+The only meaningful delta is to make the remote trust boundary explicit inside the existing multi-user/cloud security lane: authenticated principal -> server-owned workspace/tenant -> exact packset -> read/write scope -> capability grants -> CorpusService. Do not create a competing SaaS architecture project yet.
+
+## Authority boundary
+
+This validation increases confidence in the provider-independent architecture while deliberately lowering confidence in premature implementation choices. It does not promote R2 to permanent storage, does not freeze a public SaaS SDK/API shape, and does not authorize a multi-writer design. Promotion requires the mechanical gates above and explicit decision review.
