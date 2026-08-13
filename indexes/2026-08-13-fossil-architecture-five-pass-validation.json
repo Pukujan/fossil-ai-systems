@@ -1,0 +1,44 @@
+{
+  "schema_version": "fossil.research-handoff.v1",
+  "handoff_id": "handoff_2eb7dedf9acf4bbea4c71ba1",
+  "title": "FOSSIL architecture validation — five-pass sourced refinement",
+  "retrieval_prompt": "Reconstruct the five-pass validation of the 2026-08-13 FOSSIL architecture review, including what was ratified as provider-independent invariant, what remains candidate-only, and the remote trust-boundary requirement.",
+  "source": {
+    "artifact_id": "art_b290114937fd17e94d788ac5533430c2",
+    "snapshot_id": "snap_d275aa3924e14702bf6fa117",
+    "sha256": "b290114937fd17e94d788ac5533430c2b614c60c38a2d6945fce434c2f12b04e",
+    "representation": "Locally preserved five-pass validation synthesis with exact primary-source URLs; external web pages were not archived byte-for-byte."
+  },
+  "refines": {
+    "artifact_id": "art_063dce2c370d29b62bf67ea4c8e390a3",
+    "snapshot_id": "snap_fad0c01c9a2b00d4c4de6e92",
+    "relationship": "refines_without_superseding"
+  },
+  "current_status": {
+    "accepted_current": [],
+    "proposed": [
+      "clm_66ab6ea5c17b4c41b3995212fd8e7165",
+      "clm_cbab55345d6747fb8b975c3d757d9502",
+      "clm_b0bf1108d3154b5d8a08e9ab40d85e15"
+    ]
+  },
+  "validation_gates": [
+    "durable-object correctness and conflict semantics",
+    "redaction across canonical store, mirrors, projections, exports and caches",
+    "empty-machine canonical recovery and semantic rebuild",
+    "hostile remote caller and cross-tenant authorization isolation",
+    "longitudinal epistemic correctness and query scaling independent of remote corpus scans"
+  ],
+  "backlog_coverage": {
+    "fossil-core#81": "provider-independent durable storage and replaceable local projection architecture",
+    "fossil-core#87": "S3-compatible/R2 durability plus zero-local-state rebuild proof",
+    "fossil-core#111": "semantic commit hardening, exact packsets/promotion, longitudinal epistemic benchmark",
+    "fossil-core#48": "permission/redaction readiness before shared or cloud deployment"
+  },
+  "unowned_delta": "Make the remote trust boundary explicit inside the existing multi-user/cloud security lane: authenticated principal -> server-owned workspace/tenant -> exact packset -> read/write scope -> capability grants -> CorpusService. Do not treat caller-supplied provenance as authorization.",
+  "authority_boundary": "Proposed research only. R2 remains a candidate implementation; no SaaS API/SDK shape or multi-writer design is accepted by this handoff.",
+  "limitations": [
+    "External primary-source pages were verified live on 2026-08-13 but were not archived as immutable source-byte artifacts in this pass.",
+    "Native multi-pack corpus validation remains required before merge."
+  ]
+}
