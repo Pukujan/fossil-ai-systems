@@ -1,0 +1,63 @@
+# FOSSIL adversarial architecture review — durable proposed research
+
+**Captured:** 2026-08-13  
+**Status:** PROPOSED_RESEARCH — not accepted architecture and not a decision-log update.  
+**Origin:** Derived from a Sol/GPT-5.6 architecture review pasted by the owner into ChatGPT on 2026-08-13. The original chat/export was not independently captured in this ingestion pass, so this memo is the durable reviewed synthesis, not a claim of verbatim transcript preservation.
+
+## Scope
+
+The review stress-tested FOSSIL across durability, malicious/wrong-agent behavior, pack/domain scaling, long-horizon contradictory knowledge, and single-maintainer operational burden. It also compared the FOSSIL semantic layer with mature substrates including XTDB, Datomic, KurrentDB/EventStoreDB, TypeDB, RDF/PROV-O/SHACL, and Graphiti.
+
+## Proposed findings
+
+1. **Pack hierarchy remains a strong architectural idea.** FOSSIL should preserve the principle that common/domain knowledge can be mounted read-only by projects while project observations normally write locally and require explicit reviewed promotion upward.
+
+2. **The commit gate is semantically under-enforced relative to the architecture contract.** Current envelope/capability/schema validation is stronger than event-type-specific evidence, typed payload, ontology relation/type, and policy validation. A deterministic semantic commit gate should make those checks unavoidable for accepted high-impact knowledge.
+
+3. **Pack reproducibility and promotion semantics need hardening.** Pack environments should support exact revision locking, dependency-cycle/hierarchy constraints, and promotion that is portable and self-contained (or explicitly pins the source pack, revision, and source event). A target pack should not contain a promotion marker that cannot resolve the promoted claim independently.
+
+4. **Canonical durability should move beyond ordinary Git/local filesystem as sensitive or production knowledge grows.** The existing S3-compatible/object-store work is aligned with this finding; Git should remain source/control/evidence-pointer infrastructure rather than the confidential dynamic knowledge data plane.
+
+5. **Redaction must account for immutable repository history.** Deleting a current canonical event file is insufficient if sensitive payload bytes remain in Git history. Confidential payload storage and redaction semantics should be designed so repository history is not the permanent sensitive-data substrate.
+
+6. **FOSSIL needs a longitudinal knowledge benchmark, not only retrieval/model bakeoffs.** The benchmark should test historical belief reconstruction, valid-time versus system-time questions, superseded premises, dependent-decision staleness, contradictory evidence, ontology evolution, projection rebuilds, and materially larger event/claim counts.
+
+7. **Operational usability should distinguish CAPTURE, PROPOSED KNOWLEDGE, and ACCEPTED KNOWLEDGE.** Capture should be cheap; AI extraction can create proposed claims/decisions/risks; rigorous evidence/typing/policy verification should be concentrated on consequential accepted knowledge such as decisions, contracts, risks, assumptions, security claims, financial commitments, architecture decisions, and lessons learned.
+
+8. **The current fossil-ai-systems pack metadata is architecturally immature.** It still identifies as a project/plugin-harness pack rather than a domain pack, even though the broader architecture anticipates common → domain → project layering. Any migration should preserve stable pack identity or use an explicit migration contract rather than cosmetic renaming.
+
+## Existing backlog coverage observed on 2026-08-13
+
+- `fossil-core#81` and `#87` already own the durable-storage/object-store/rebuild direction. Do not duplicate that work.
+- `fossil-core#48` already owns permission/redaction readiness at the retrieval/projection boundary.
+- `fossil-core#89` names a future `reviewed-evidence-ingest` workflow, but that workflow is catalogued rather than implemented in the repository at this review point.
+- `fossil-core#84/#88` provide a useful mechanical-preflight pattern, but they do not substitute for FOSSIL's own semantic commit validation.
+- `fossil-core#47/#48` own retrieval/model evaluation, but not the proposed long-horizon epistemic/knowledge-history benchmark.
+
+## Gaps that appear unowned
+
+### Gap A — semantic commit enforcement
+Create a focused architecture/implementation lane for event-type-specific payload schemas, evidence requirements, ontology-generated relation/type constraints, policy checks, and deterministic fail-closed commit validation. Avoid maintaining ontology YAML and hard-coded lifecycle semantics as divergent authorities.
+
+### Gap B — pack lock and promotion semantics
+Create a focused lane for `packset.lock` (or equivalent exact revision set), acyclic/common→domain→project dependency rules, and self-contained or exactly pinned promotion semantics. Include replay/portability tests across moved/rebuilt pack environments.
+
+### Gap C — longitudinal epistemic benchmark
+Create a benchmark lane that answers questions such as: what was believed at a historical date; what evidence changed the position; which current decisions depend on now-false assumptions; and whether these answers remain correct after years of contradictory updates, ontology changes, and projection rebuilds.
+
+### Gap D — reviewed evidence ingestion
+Implement the `reviewed-evidence-ingest` workflow already named in `#89`: preserve significant source/research bytes, keep derived synthesis separate, emit only proposed knowledge by default, validate the pack, and require explicit review/promotion before accepted architecture or common/domain knowledge changes.
+
+## Recommended sequencing
+
+1. Preserve this review as proposed research; do not promote its conclusions directly to accepted architecture.
+2. Implement semantic commit enforcement before adding much more knowledge-model complexity.
+3. Harden pack revision/promotion semantics next because domain scaling depends on reproducible pack environments.
+4. Continue the already-owned durable object-store proof in `#87`; do not start a competing database rewrite solely from this review.
+5. Add the longitudinal epistemic benchmark before using retrieval/model scores as evidence of long-term second-brain quality.
+6. Implement reviewed-evidence ingestion so future research does not require bespoke manual corpus seeding.
+7. Revisit whether a bitemporal transaction substrate (for example XTDB/Datomic/Kurrent-class systems) is justified only after the canonical storage/rebuild and longitudinal benchmarks expose concrete requirements.
+
+## Authority boundary
+
+This document is a durable research proposal. It may challenge or refine current architecture, but it does not supersede accepted decisions, current architecture trackers, or issue/PR state by itself. Promotion requires explicit evidence-backed review.
