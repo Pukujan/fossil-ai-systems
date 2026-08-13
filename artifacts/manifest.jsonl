@@ -9,3 +9,4 @@
 {"artifact_id":"art_aaafafdb24d2d7270924dd00f24156f3","byte_size":2779,"content_hash":{"algorithm":"sha256","digest":"aaafafdb24d2d7270924dd00f24156f3219fdfbaa6cc86d62a2e75fb833f80d0"},"media_type":"application/json"}
 {"artifact_id":"art_d59b94a3e46cf91b7b3160183e0bf307","byte_size":23714,"content_hash":{"algorithm":"sha256","digest":"d59b94a3e46cf91b7b3160183e0bf30739fa79c9cd336aaa515dba2e614fd0d3"},"media_type":"text/markdown"}
 {"artifact_id":"art_b5d4e04f0a97996f7d1ddeb9b26b9f40","byte_size":4857,"content_hash":{"algorithm":"sha256","digest":"b5d4e04f0a97996f7d1ddeb9b26b9f40d9be7ff11e1c70c32b43ff8cd08d4a4b"},"media_type":"application/json"}
+{"artifact_id":"art_063dce2c370d29b62bf67ea4c8e390a3","byte_size":6970,"content_hash":{"algorithm":"sha256","digest":"063dce2c370d29b62bf67ea4c8e390a34c7483f3715dcd50d8a2588c4754b596"},"media_type":"text/markdown"}

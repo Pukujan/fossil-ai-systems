@@ -1,0 +1,40 @@
+{
+  "schema_version": "fossil.research-handoff.v1",
+  "handoff_id": "handoff_94bf163c1ecdf5b33e27ea56",
+  "title": "FOSSIL adversarial architecture review — proposed hardening research",
+  "retrieval_prompt": "Reconstruct the 2026-08-13 FOSSIL adversarial architecture review and its proposed hardening gaps.",
+  "source": {
+    "artifact_id": "art_063dce2c370d29b62bf67ea4c8e390a3",
+    "snapshot_id": "snap_fad0c01c9a2b00d4c4de6e92",
+    "sha256": "063dce2c370d29b62bf67ea4c8e390a34c7483f3715dcd50d8a2588c4754b596",
+    "representation": "Owner-pasted review synthesized into a durable local research memo; original chat/export not independently captured."
+  },
+  "current_status": {
+    "accepted_current": [],
+    "proposed": [
+      "clm_5b44851841667f22a4d0a2572cf52011",
+      "clm_3b3f19016ae7a22e59b301e7b86618eb",
+      "clm_fadb65e13bd10c3c00a6eb051c53c4c0"
+    ]
+  },
+  "gaps": [
+    "semantic commit enforcement",
+    "pack revision lock and promotion semantics",
+    "longitudinal epistemic benchmark",
+    "reviewed evidence ingestion implementation"
+  ],
+  "existing_backlog": [
+    "Pukujan/fossil-core#47",
+    "Pukujan/fossil-core#48",
+    "Pukujan/fossil-core#81",
+    "Pukujan/fossil-core#84",
+    "Pukujan/fossil-core#87",
+    "Pukujan/fossil-core#88",
+    "Pukujan/fossil-core#89"
+  ],
+  "authority_boundary": "Proposed research only; does not supersede accepted architecture.",
+  "validation": {
+    "status": "NOT_RUN",
+    "notes": "Native multi-pack validation should run in PR or CI before merge."
+  }
+}
